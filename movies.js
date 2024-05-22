@@ -66,3 +66,21 @@ class TvSerie extends Movie {
     return `${this.title} è una serie tv di genere ${this.genre}. La prima stagione è stata rilasciata nel ${this.year} ed in totale sono state prodotte ${this.seasons} stagioni. Il suo voto è di ${this.rating}.`;
   }
 }
+
+// Tramite la funzione .map(), creare un nuovo array dove per ogni elemento dell'array viene creata un istanza della classe Movie o TvSerie in base al type e salvata nel nuovo array.
+
+const instances = data.map((item) => {
+  if (item.type === 'movie') {
+    return new Movie(item.title, item.year, item.genre, item.rating);
+  } else if (item.type === 'tv') {
+    return new TvSerie(
+      item.title,
+      item.year,
+      item.genre,
+      item.rating,
+      item.seasons
+    );
+  }
+});
+
+console.log(instances.toString());
