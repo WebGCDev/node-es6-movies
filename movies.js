@@ -84,3 +84,15 @@ const instances = data.map((item) => {
 });
 
 console.log(instances.toString());
+
+// Creiamo una funzione che restituisca la media dei voti di tutti i film per un determinato genere. Prevedere un argomento per la lista dei film ed uno per il genere.
+
+function averageRatingByGenre(list, genre) {
+  const filtered = list.filter(
+    (item) => item.genre === genre && item instanceof Movie
+  );
+  const totalRating = filtered.reduce((sum, item) => sum + item.rating, 0);
+  return totalRating / filtered.length || 0;
+}
+
+console.log(averageRatingByGenre(instances, 'Fantasy'));
