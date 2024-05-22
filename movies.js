@@ -105,3 +105,13 @@ function uniqueGenres(list) {
 }
 
 console.log(uniqueGenres(instances));
+
+// Funzione per filtrare i film per genere e ottenere un array con i risultati di toString()
+
+function filterMoviesByGenre(list, genre) {
+  return list
+    .filter((item) => item.genre === genre)
+    .map((item) => item.toString());
+}
+
+console.log(filterMoviesByGenre(instances, 'Crime drama'));
