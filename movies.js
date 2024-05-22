@@ -51,6 +51,18 @@ class Movie {
   }
 
   toString() {
-    return `${this.title} è un film di genere ${this.genre}. È stato rilasciato nel ${this.year} ed ha un voto di ${this.rating}.`;
+    return `${this.title} è un film di genere ${this.genre}. È stato rilasciato nel ${this.year} ed il suo voto è di ${this.rating}.`;
+  }
+}
+
+// Creare una classe TvSerie che estenda la classe Movie e ne aggiunga la proprietà seasons. Entrambe le classi dovranno avere un metodo toString() che ritorni una stringa con i dati del film
+class TvSerie extends Movie {
+  constructor(title, year, genre, rating, seasons) {
+    super(title, year, genre, rating); //Estende la classe e riutilizza gli stessi parametri
+    this.seasons = seasons;
+  }
+
+  toString() {
+    return `${this.title} è una serie tv di genere ${this.genre}. La prima stagione è stata rilasciata nel ${this.year} ed in totale sono state prodotte ${this.seasons} stagioni. Il suo voto è di ${this.rating}.`;
   }
 }
