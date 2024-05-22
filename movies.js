@@ -39,3 +39,18 @@ const data = [
     type: 'movie',
   },
 ];
+
+// Creare una classe Movie che contenga le informazioni sopra indicate.
+
+class Movie {
+  constructor(title, year, genre, rating) {
+    this.title = title;
+    this.year = year;
+    this.genre = genre;
+    this.rating = rating;
+  }
+
+  toString() {
+    return `${this.title} è un film di genere ${this.genre}. È stato rilasciato nel ${this.year} ed ha un voto di ${this.rating}.`;
+  }
+}
