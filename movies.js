@@ -96,3 +96,12 @@ function averageRatingByGenre(list, genre) {
 }
 
 console.log(averageRatingByGenre(instances, 'Fantasy'));
+
+// Creiamo una funzione che restituisca la lista di tutti i generi dei film, senza che questi si ripetano.
+
+function uniqueGenres(list) {
+  const genres = list.map((item) => item.genre);
+  return [...new Set(genres)];
+}
+
+console.log(uniqueGenres(instances));
